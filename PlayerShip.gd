@@ -5,7 +5,7 @@ onready var cameras = [camera_1]
 onready var pivot = $Spatial
 
 export var turn_speed = 0.04 # radians/pixel
-export var thrust_speed = 100
+export var thrust_speed = 120
 export var rotate_speed = 0.004
 
 var velocity = Vector3()
@@ -29,14 +29,14 @@ func turn():
 	turn_velocity = lerp(turn_velocity, turn_vec*turn_speed, 0.02)
 	rotate(transform.basis.x, turn_velocity.x)
 	rotate(transform.basis.y, turn_velocity.y)
-	rotate(transform.basis.z, turn_velocity.z/2)
+	rotate(transform.basis.z, turn_velocity.z/3)
 	
 
 func fly():
 	var forward = -transform.basis.z
 	var backward = transform.basis.z
 	var fly_vec = -int(Input.is_action_pressed("thrust"))+int(Input.is_action_pressed("brake"))
-	velocity = lerp(velocity, backward*thrust_speed*fly_vec, 0.002)
+	velocity = lerp(velocity, backward*thrust_speed*fly_vec, 0.01)
 
 func _physics_process(delta):
 	turn()

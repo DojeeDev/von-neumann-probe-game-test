@@ -19,6 +19,10 @@ config/name="von-neumann-probe-game"
 run/main_scene="res://test_world.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 look_up={
