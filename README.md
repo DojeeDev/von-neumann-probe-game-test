@@ -1,0 +1,1 @@
+This is a prototype of a space game I am working on.Main Goals include:-Multiplayer -Mineing and leveling up space ship-planet generation-enemies-combat
