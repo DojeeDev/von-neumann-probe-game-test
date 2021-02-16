@@ -6,7 +6,6 @@
 height = 3.55822
 
 [node name="PlayerShip" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -27,11 +26,6 @@ operation = 2
 radius = 0.771843
 height = 1.24406
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.23319 )
-current = true
-far = 8192.0
-
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0.000816857, 0.000459488, -0.000816509, 0.999999, -0.00075643, -0.000460105, 0.000756055, 1, 0, 0, -1.322 )
 light_color = Color( 0.823529, 0.878431, 0.984314, 1 )
@@ -40,3 +34,15 @@ spot_range = 68.3603
 spot_attenuation = 1.1487
 spot_angle = 46.2126
 spot_angle_attenuation = 0.707107
+
+[node name="Cameras" type="Spatial" parent="."]
+
+[node name="Camera1" type="Camera" parent="Cameras"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.23319 )
+current = true
+far = 8192.0
+
+[node name="Camera2" type="Camera" parent="Cameras"]
+transform = Transform( 1, 0, 0, 0, 0.894193, 0.447681, 0, -0.447681, 0.894193, 0, 2.60355, 3.64718 )
+current = true
+far = 8192.0

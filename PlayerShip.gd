@@ -1,16 +1,19 @@
 extends KinematicBody
 
-onready var camera_1 = $Camera
-onready var cameras = [camera_1]
+onready var cameras = $Cameras.get_children()
+
 onready var pivot = $Spatial
 
 export var turn_speed = 0.04 # radians/pixel
-export var thrust_speed = 120
+export var thrust_speed = 300
 export var rotate_speed = 0.004
 
 var velocity = Vector3()
 var current_camera = 0
 var turn_velocity = Vector3.ZERO
+
+func _ready():
+	cameras[0].current = true
 
 func turn():
 	var turn_vec = Vector3.ZERO
